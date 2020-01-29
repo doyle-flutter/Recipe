@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
-import 'package:form_builder/data.dart';
-import 'package:intl/intl.dart';
 
 import 'result.dart';
 
