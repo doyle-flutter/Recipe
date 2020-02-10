@@ -1,4 +1,4 @@
-// Flutter X 생활코딩(Node.js/express) # 2
+// Flutter X 생활코딩(Node.js/express) # 1
 
 var express = require("express");
 var app = express();
