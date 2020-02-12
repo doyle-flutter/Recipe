@@ -38,7 +38,7 @@ class _CoronaPageState extends State<CoronaPage> {
   }
 
   Future fetch() async{
-    var res = await http.get("http://192.168.1.5:3000/a");
+    var res = await http.get("http://xxx.xxx.x.x:3000/a");
     return json.decode(res.body);
   }
 
