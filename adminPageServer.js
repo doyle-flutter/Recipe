@@ -1,4 +1,4 @@
-// Flutter X 생활코딩 #7 ADMIN PAGE(WEB)
+// Flutter X 생활코딩 #6 ADMIN PAGE(WEB)
 // Local 환경에서 테스트해주세요
 
 var express = require('express');
