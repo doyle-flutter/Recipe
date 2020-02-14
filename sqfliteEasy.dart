@@ -1,6 +1,5 @@
 // Model Class를 사용하지 않고 사용하면 처음 배울 때 더욱 쉬울 수 있지만
-// 사용할 때에는 굉장히 불편합니다, 구조화된 상태에서는 .(체이닝)을 통해 변수(필드)가
-// 보이기 때문입니다 :)
+// 구조화된 상태에서는 변수(필드)를 사용하기 편합니다 :)
 
 import 'package:flutter/material.dart';
 import 'package:sqflite/sqflite.dart';
