@@ -38,12 +38,12 @@ class _LocalSqlState extends State<LocalSql> {
                     itemCount: snap.data.length,
                     itemBuilder: (context, int index){
                       return ListTile(
-                        leading: Text(snap.data[index]['id'].toString()),
-                        title: Text(snap.data[index]['title'].toString()),
-                        subtitle: Text(snap.data[index]['done'].toString()),
+                        leading: Text(snap.data[index][columnId].toString()),
+                        title: Text(snap.data[index][columnTitle].toString()),
+                        subtitle: Text(snap.data[index][columnDone].toString()),
                         trailing: IconButton(
                           icon: Icon(Icons.delete),
-                          onPressed: () => delete(id: snap.data[index]['id']),
+                          onPressed: () => delete(id: snap.data[index][columnId]),
                         ),
                       );
                     }
