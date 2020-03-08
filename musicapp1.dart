@@ -47,7 +47,6 @@ class _MyAppState extends State<MyApp> {
       appBar: AppBar(
         title: Text("MainPage"),
         centerTitle: true,
-        leading: Container(),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.confirmation_number),
