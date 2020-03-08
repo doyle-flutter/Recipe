@@ -266,11 +266,6 @@ class _OtherPageState extends State<OtherPage> {
   TextEditingController pwCt = new TextEditingController();
 
   @override
-  void didChangeDependencies() {
-
-    super.didChangeDependencies();
-  }
-  @override
   void dispose() {
     this.idCt.dispose();
     this.pwCt.dispose();
