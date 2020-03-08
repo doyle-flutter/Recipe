@@ -186,7 +186,7 @@ class _MyAppState extends State<MyApp> {
           }
           else{
             currentBtmBarIndex = 0;
-            String _getData = await Navigator.of(context).push(
+            await Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (context) => OtherPage()
               )
