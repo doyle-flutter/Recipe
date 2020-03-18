@@ -1,6 +1,5 @@
 // 연속 사용 및 예외 처리
 
-
 class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
