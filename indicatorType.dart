@@ -60,23 +60,23 @@ class _IndiPageState extends State<IndiPage>{
           ],
         ),
 
-//        child: CircularProgressIndicator(
-//          semanticsValue: "ASd",
-//          value: this.indicatorValue*0.1,
-//          valueColor: AlwaysStoppedAnimation<Color>(Colors.red),
-//        ),
-//        child: LinearProgressIndicator(
-//          value: this.indicatorValue*0.1,
-//          valueColor: indicatorValueColor,
-//        ),
-//        child: RefreshProgressIndicator(
-//          value: this.indicatorValue*0.1,
-//          valueColor: this.indicatorValueColor,
-//        ),
-//        child: CupertinoActivityIndicator(
-//          radius: 20.0,
-//          animating: false,
-//        ),
+//            CircularProgressIndicator(
+//              semanticsValue: "ASd",
+//              value: this.indicatorValue*0.1,
+//              valueColor: AlwaysStoppedAnimation<Color>(Colors.red),
+//            ),
+//            LinearProgressIndicator(
+//              value: this.indicatorValue*0.1,
+//              valueColor: indicatorValueColor,
+//            ),
+//            RefreshProgressIndicator(
+//              value: this.indicatorValue*0.1,
+//              valueColor: this.indicatorValueColor,
+//            ),
+//            CupertinoActivityIndicator(
+//              radius: 20.0,
+//              animating: false,
+//            ),
       ),
     );
   }
