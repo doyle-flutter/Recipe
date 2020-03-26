@@ -60,11 +60,6 @@ class _IndiPageState extends State<IndiPage>{
           ],
         ),
 
-//        child: CircularProgressIndicator(),
-//        child: LinearProgressIndicator(),
-//        child: RefreshProgressIndicator(),
-//        child: CupertinoActivityIndicator(radius: 20.0,),
-
 //        child: CircularProgressIndicator(
 //          semanticsValue: "ASd",
 //          value: this.indicatorValue*0.1,
