@@ -61,7 +61,6 @@ class _IndiPageState extends State<IndiPage>{
         ),
 
 //            CircularProgressIndicator(
-//              semanticsValue: "ASd",
 //              value: this.indicatorValue*0.1,
 //              valueColor: AlwaysStoppedAnimation<Color>(Colors.red),
 //            ),
