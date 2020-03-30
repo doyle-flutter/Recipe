@@ -111,6 +111,8 @@ void main() {
   Function({String v, int i}) fparamsNaming2 = ({String v, int i}) => i;
   print(fparamsNaming2(v:"StringValue", i:123123));
   
+  Function({String st, List li, int i}) fparamsNaming3 = ({String st, List li, int i}) => li[0];
+  print(fparamsNaming3(st:"ST", li:[1,2,3], i:4));
   
   Function fClosure1 = (){};
   Function fClosure2 = (){return vString;};
@@ -123,12 +125,24 @@ void main() {
   String fString2() => vString;
   String fString3(){return vString;}
   
-  print(fString);
-  print(fString2);
-  print(fString3);
+  String ffString(String s) => s;
+  print(ffString("a"));
   
-  print(fString2());
-  print(fString3());
+  String ffString2(String s, int i, String ss) => ss;
+  print(ffString2("a",1,"aaa"));
+  
+  String ffString3({String s, String ss, String sss}) => s;
+  print(ffString3(s:"S", ss:"SS", sss:"SSS"));
+  
+  
+  int fInt() => 1;
+  double fDouble() => 2.3;
+  bool fBool() => false;
+  void fVoid(){}
+  List fList() => new List();
+  List<String> fList2() => ["a","b","c", fString, fString2()];
+  Map<String, dynamic> fMap() => {"key": fInt()};
+  Set<int> fSet() => new Set.from([1,fInt(),2,3,3]);
   
   
   MyClass mya = new MyClass();
