@@ -1,3 +1,5 @@
+class MyClass{}
+
 void main() {
 
   // value context
@@ -9,7 +11,9 @@ void main() {
   bool vBool = true;
   void vVoiid = null;
   List vlist = new List();
+  List vlist2 = [];
   Set vSet = new Set();
+  Set vSet2 = new Set.from([]);
   Function vFunction = (){};
   MyClass vMyClass = new MyClass();
   
@@ -114,6 +118,7 @@ void main() {
   Function({String st, List li, int i}) fparamsNaming3 = ({String st, List li, int i}) => li[0];
   print(fparamsNaming3(st:"ST", li:[1,2,3], i:4));
   
+  // -- closure
   Function fClosure1 = (){};
   Function fClosure2 = (){return vString;};
   Function fClosure3 = (){ return (){ return vString; }; };
@@ -134,6 +139,9 @@ void main() {
   String ffString3({String s, String ss, String sss}) => s;
   print(ffString3(s:"S", ss:"SS", sss:"SSS"));
   
+  String ffString4({MyClass m}) => m.toString();
+  print(ffString4(m: new MyClass()));
+  
   
   int fInt() => 1;
   double fDouble() => 2.3;
@@ -152,6 +160,4 @@ void main() {
 }
 
 
-class MyClass{
-  
-}
+
