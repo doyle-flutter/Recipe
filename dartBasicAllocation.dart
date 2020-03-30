@@ -63,15 +63,72 @@ void main() {
   Set<List<Function>> slFunction = new Set.from([lFunction]);
   Set<List<MyClass>> slMyClass = new Set.from([lMyClass]);
    
-  Map ma = new Map();
+  Map mVar = new Map();
+  Map mVarFrom = new Map.from({'a':'b'});
   Map<String, dynamic> mdynamic = {"key1":1, "key2":"2"};
   Map<String, String> mString = {"key1":"문자열", "key2":"값"};
   Map<String, int> mInt = {"key1":1, "key2":2};
   Map<String, double> mDouble = {"key1": 1.0, "key2": 2.3};
   Map<String, bool> mBool = {"key1": true, "key2": false};
+  Map<String, void> mVoid = {"key1":null};
+  Map<String, List> mList = {'key1': [], 'key2':new List()};
+  Map<String, Set> mSet = {'key1': new Set(), 'key2':new Set.from([])};
+  Map<String, Map> mMap = {'key1': {}, 'key2': new Map()};
+  Map<String, Function> mFunction = {'key1': (){}};
+  Map<String, MyClass> mMyClass = {'key1':new MyClass()};
   
-  Function fa = (){};
-  Function fb = () => 'a';
+  // 가능
+  Map<int, String> mIntKey = {1: "값"};
+  
+  Map<String, List<String>> mlString = new Map.from({'key1': lString});
+  Map<String, List<int>> mlInt = {'key1': lInt};
+  // ...
+  
+  
+  Function fVar = (){};
+  
+  Function(String) fpString2 = (String v){ return v; };
+  Function(String v) fpString = (String v){ return v; };
+  Function(int i) fpInt = (int i) => i;
+  Function(double i) fpDouble = (double i) => i;
+  
+  Function(List l) fpList = (List l) => l[0];
+  print(fpList(lString));
+  
+  Function(Map m) fpMap = (Map m) => m['id'];
+  print(fpMap({'id': "IDID"}));
+  
+  Function(Set s) fpSet = (Set s) => s.toList()[0];
+  print(fpSet(new Set.from([1,2,2])));
+  
+  Function(Function f) fpFunction = (Function f) => f();
+  print(fpFunction(() => "String Value Function in Function"));
+  
+  
+  Function({String v}) fparamsNaming1 = ({String v}) => v;
+  print(fparamsNaming1(v:"StringValue"));
+  
+  Function({String v, int i}) fparamsNaming2 = ({String v, int i}) => i;
+  print(fparamsNaming2(v:"StringValue", i:123123));
+  
+  
+  Function fClosure1 = (){};
+  Function fClosure2 = (){return vString;};
+  Function fClosure3 = (){ return (){ return vString; }; };
+  print(fClosure1());
+  print(fClosure2());
+  print(fClosure3()());
+  
+  String fString = (){return vString;}();
+  String fString2() => vString;
+  String fString3(){return vString;}
+  
+  print(fString);
+  print(fString2);
+  print(fString3);
+  
+  print(fString2());
+  print(fString3());
   
   
   MyClass mya = new MyClass();
