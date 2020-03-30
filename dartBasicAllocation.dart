@@ -3,8 +3,8 @@ class MyClass{}
 void main() {
 
   // value context
-  var vVar = "동적으로(아무거나)) 담을 수 있음"; 
-  dynamic vdynamic = '아무거나';
+  var vVar = "동적으로(아무 값이나) 담을 수 있음"; 
+  dynamic vdynamic = '값';
   String vString = "반드시 문자열만";
   int vInt = 1;
   double vDouble = 2.0;
@@ -151,6 +151,7 @@ void main() {
   List<String> fList2() => ["a","b","c", fString, fString2()];
   Map<String, dynamic> fMap() => {"key": fInt()};
   Set<int> fSet() => new Set.from([1,fInt(),2,3,3]);
+  MyClass fMyClass() => new MyClass();
   
   
   MyClass mya = new MyClass();
