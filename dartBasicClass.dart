@@ -91,6 +91,36 @@ void main(){
   
 }
 
+
+
+class ParentClass{
+  String vString;
+  String pr(){
+
+  }
+
+  String pr1(){
+
+  }
+  String pr2(){
+
+  }
+}
+
+class ChildClass extends ParentClass{
+
+  @override
+  // TODO: implement vString
+  String get vString => super.vString;
+
+  @override
+  String pr2() {
+    // TODO: implement pr2
+    return super.pr2();
+  }
+}
+
+
 // abstract 추상적인
 // 만들고자하는 로직을 추상화하는 단계
 // 코드의 전반적인 흐름을 먼저 만들고 맞추어 내부를 꾸밈
