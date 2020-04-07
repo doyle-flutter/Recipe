@@ -38,3 +38,27 @@ class NowPage extends StatelessWidget {
     );
   }
 }
+
+class NewPageToast extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: RaisedButton(
+          child: Text("이동한 페이지에서 Toast 띄우기"),
+          // onPressed: _showToast,
+          onPressed: (){
+            try{
+              Scaffold.of(context).showSnackBar(
+                  SnackBar(content: Text("Show Snack"),)
+              );
+            }
+            catch(e){
+              _showToast();
+            }
+          },
+        ),
+      ),
+    );
+  }
+}
