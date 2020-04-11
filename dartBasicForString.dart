@@ -10,14 +10,14 @@ void main() {
   print(value[1]);
   print(value[2]);
   print(value[3]);
+  print(value[11] == null);
   try{
-    print(value[11] == null);
+    print(value[11]);
   }
   catch(e){
     print("value 변수에 없는 index");
   }
   
-//  print(value[11] == null); // 불가
 //   print(value[11]); // 불가
   
   print(value.length);
