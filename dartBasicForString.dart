@@ -1,3 +1,5 @@
+//dartPad 기준
+
 void main() {
 
   // 문자열 
@@ -15,9 +17,8 @@ void main() {
     print("value 변수에 없는 index");
   }
   
-//   print(value[11] == null);
-  
-//   print(value[11]);
+//  print(value[11] == null); // 불가
+//   print(value[11]); // 불가
   
   print(value.length);
   
@@ -94,13 +95,21 @@ void main() {
   
   String example = " (앞) 내용 (/뒤)  ";
   
-  List resultValue3 = example.trim().replaceAll("(앞)", "").replaceAll("(\/뒤)", "").split(" ");
+  List<String> resultValue3 = example.trim().replaceAll("(앞)", "").replaceAll("(\/뒤)", "").split(" ");
   String exampleResult = "";
   for(int i=0; i<resultValue3.length; i++){
     exampleResult += resultValue3[i];
   }
   
   print("exampleResult : $exampleResult");
+  
+  List checkString = ['(', ")",'/'];
+  for(int i=0;i<checkString.length;i++){
+    if(exampleResult.contains(checkString[i])){
+      exampleResult = "오류";
+    }
+  }
+  print("CheckIng exampleResult : $exampleResult");
   
   
 }
