@@ -24,6 +24,13 @@ main(){
   print(checkIndex);
   
   
+  String findValue = '가';
+  for(int i =0; i<target.length; i++){
+    // if(target[i] == findValue) return print("찾음"); // main Context가 return 되어 종료
+    if(target[i] == findValue) print("찾음");
+  }
+  
+  
   // for & add
   
   for(int i = 0; i < target.length; i++){
@@ -48,15 +55,20 @@ main(){
   
   // sort 
   List<int> numList = [1,2,3,4,5];
-  target.sort((String start, String end) => end.hashCode.compareTo(start.hashCode));
-  print(target);
-  // for & find
- 
+  numList.sort((int start, int end) => end.compareTo(start));
+  print(numList);
+  numList.sort((int start, int end) => start.compareTo(end));
+  print(numList);
   
   
+  // 예제
+  // 주어진 배열을 오름차순으로 변경하고
+  // 50보다 큰 수를 찾아서 print() 하기
   
+  List<int> examplEx = [1,3,4,6,60];
   
-  
-  
+  examplEx.sort((int s, int e) => s.compareTo(e));
+  examplEx.forEach((e) => (e > 50) ? print(e) : null);
+
   
 }
