@@ -1,6 +1,7 @@
 // 실행하고 있는 플랫폼을 체크합니다
 // 기기의 진동에대한 기능이 있는지 체크합니다(에뮬레이터는 불가능)
 // IOS 에러 해결 : https://stackoverflow.com/questions/54530383/flutter-package-vibrate-0-0-4-is-not-working-in-ios
+// 진동 패키지 : https://pub.dev/packages/vibration
 
 import 'package:flutter/material.dart';
 import 'package:vibration/vibration.dart';
