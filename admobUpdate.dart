@@ -1,4 +1,5 @@
 // 서버 체크 및 ADMOB 광고를 다양하게 사용해보았습니다
+// URL : https://pub.dev/packages/firebase_admob
 
 import 'dart:convert';
 import 'package:firebase_admob/firebase_admob.dart';
