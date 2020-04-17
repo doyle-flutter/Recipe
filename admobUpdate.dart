@@ -77,14 +77,16 @@ class MyApp extends StatelessWidget {
                   },
                   func2: (){
                     myInterstitial..load()..show();
+
                   },
                   func3: (){
                     if(myBanner == null) myBanner = createBn()..load();
-                    myBanner..show();
+                    myBanner.show();
+
                   },
                   func4: (){
                     if(myBanner != null){
-                      myBanner..dispose();
+                      myBanner.dispose();
                       myBanner = createBn()..load();
                     }
                   },
