@@ -19,7 +19,9 @@ class MyApp extends StatelessWidget {
       body: Center(
         child: RaisedButton(
           onPressed: () async{
-            if(await Vibration.hasVibrator() && !await Vibration.hasAmplitudeControl() ) (Theme.of(context).platform == TargetPlatform.android)
+            if(await Vibration.hasVibrator() 
+               && !await Vibration.hasAmplitudeControl() 
+              ) (Theme.of(context).platform == TargetPlatform.android)
               ? Vibration.vibrate(
                  duration: 3000,
                  pattern: [100, 50, 200, 30, 1000, 2000]
