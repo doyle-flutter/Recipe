@@ -11,13 +11,13 @@ import 'package:iamport_flutter/model/payment_data.dart';
 import 'package:provider/provider.dart';
 
 void main() => runApp(
-  ChangeNotifierProvider<Connect>(
-    create: (_) => new Connect(),
-    child: MaterialApp(
-      home: MyApp(),
+    ChangeNotifierProvider<Connect>(
+      create: (_) => new Connect(),
+      child: MaterialApp(
+        home: MyApp(),
 
-    ),
-  )
+      ),
+    )
 );
 
 class MyApp extends StatelessWidget {
@@ -39,6 +39,8 @@ class MyApp extends StatelessWidget {
       print("BannerAd event is $event");
     },
   );
+
+
   InterstitialAd myInterstitial = InterstitialAd(
     adUnitId: InterstitialAd.testAdUnitId,
     targetingInfo: targetingInfo,
@@ -56,11 +58,12 @@ class MyApp extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: SafeArea(
-        child: Container(
-          width: MediaQuery.of(context).size.width,
-          child: Builder(
-            builder: (BuildContext context) => !_connect.isCheck
-              ? _errCheckWidgets(
+        child: SingleChildScrollView(
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            child: Builder(
+              builder: (BuildContext context) => !_connect.isCheck
+                  ? _errCheckWidgets(
                   context: context,
                   func1: (){
                     showDialog(context: context, builder: (context)=> AlertDialog(
@@ -68,7 +71,7 @@ class MyApp extends StatelessWidget {
                     ));
                     _connect.fetch().then((_){
                       if(!_connect.isCheck) Scaffold.of(context).showSnackBar(
-                        SnackBar(content: Text("Fail"),)
+                          SnackBar(content: Text("Fail"),)
                       );
                     });
                   },
@@ -88,40 +91,41 @@ class MyApp extends StatelessWidget {
                   func5: (){
                     videoAd..load(adUnitId: RewardedVideoAd.testAdUnitId, targetingInfo: targetingInfo)..show();
                   }
-                )
-            : Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height/2,
-              child: GridView.builder(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      mainAxisSpacing: 10.0,
-                      crossAxisSpacing: 10.0
-                  ),
-                  padding: EdgeInsets.all(10.0),
-                  itemCount: _connect.result.length,
-                  itemBuilder: (BuildContext context, int index) => InkWell(
-                    onTap: (){
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                            builder: (context) => Payment(data: _connect.result[index])
-                        )
-                      );
-                    },
-                    child: Container(
-                      color: Colors.grey,
-                      child: Center(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Text(_connect.result[index]['title']),
-                            Text(_connect.result[index]['ea']),
-                            Text(_connect.result[index]['price']),
-                          ],
+              )
+                  : Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height/2,
+                child: GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        mainAxisSpacing: 10.0,
+                        crossAxisSpacing: 10.0
+                    ),
+                    padding: EdgeInsets.all(10.0),
+                    itemCount: _connect.result.length,
+                    itemBuilder: (BuildContext context, int index) => InkWell(
+                      onTap: (){
+                        Navigator.of(context).push(
+                            MaterialPageRoute(
+                                builder: (context) => Payment(data: _connect.result[index])
+                            )
+                        );
+                      },
+                      child: Container(
+                        color: Colors.grey,
+                        child: Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Text(_connect.result[index]['title']),
+                              Text(_connect.result[index]['ea']),
+                              Text(_connect.result[index]['price']),
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                  )
+                    )
+                ),
               ),
             ),
           ),
@@ -174,7 +178,7 @@ class Payment extends StatelessWidget {
   dynamic data;
 
   Payment({@required this.data})
-   : assert(data != null);
+      : assert(data != null);
 
   @override
   Widget build(BuildContext context) {
@@ -219,8 +223,8 @@ class Payment extends StatelessWidget {
       /* [필수입력] 콜백 함수 */
       callback:  (Map<String, String> result){
         Navigator.of(context).pushAndRemoveUntil(
-          MaterialPageRoute(builder: (context) => MyApp()),
-          (Route<dynamic> route) => false
+            MaterialPageRoute(builder: (context) => MyApp()),
+                (Route<dynamic> route) => false
         );
       },
     );
