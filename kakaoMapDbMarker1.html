@@ -1,0 +1,53 @@
+// html render
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>여러개 마커 표시하기</title>
+        
+    </head>
+    <body>
+        <div id="map" style="width:100%;height:350px;"></div>
+
+        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=JS_API_KEY"></script>
+        <script>            
+            let mapContainer = document.getElementById('map'), 
+                mapOption = { 
+                    center: new kakao.maps.LatLng(33.450701, 126.570667), 
+                    level: 3 
+                };
+            
+            let map = new kakao.maps.Map(mapContainer, mapOption); 
+                
+            let imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
+                
+            fetch('/kaka',{
+                  method: 'POST', // or 'PUT'
+                })
+                .then(res => { 
+                    console.log(res.body); 
+                    return res.json();
+                })
+                .then(response => {
+                    console.log('Success:', JSON.parse(response)); 
+                    let data = JSON.parse(response);
+                    let result = data.map((e) => {
+                            e['latlng'] = new kakao.maps.LatLng(e['latlng'][0], e['latlng'][1]);
+                            return e;
+                        });
+                    for (var i = 0; i < result.length; i ++) {
+                        let imageSize = new kakao.maps.Size(24, 35); 
+                        let markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+                        new kakao.maps.Marker({
+                            map: map,
+                            position: result[i].latlng,
+                            title : result[i].title,
+                            image : markerImage
+                        });
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        </script>
+    </body>
+</html>
