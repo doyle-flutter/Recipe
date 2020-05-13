@@ -1,5 +1,10 @@
-// 급하게 IOS 테스트한 예제 코드만 업로드합니다 :)
 // 패키지 : socket_io_client: ^0.9.10
+
+// Android 설정
+// <uses-permission android:name="android.permission.INTERNET" />
+// <application ...... android:usesCleartextTraffic="true">
+
+// IOS 설정 별도 작업 없습니다
 
 import 'package:flutter/material.dart';
 import 'package:socket_io_client/socket_io_client.dart' as IO;
