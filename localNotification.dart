@@ -18,6 +18,8 @@
 
 // <application ... android:usesCleartextTraffic="true"> 
 
+// * Android Notification Imag path : android > app > src > main > res > drawable/app_icon.png
+
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
