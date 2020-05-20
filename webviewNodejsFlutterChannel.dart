@@ -6,7 +6,7 @@ class Webs extends StatelessWidget {
       withJavascript: true,
       javascriptChannels: Set.from([
         JavascriptChannel(
-          name: "jams",
+          name: "james",
           onMessageReceived: (JavascriptMessage result){
             print("message ${result.message}");
           }
