@@ -29,7 +29,7 @@ app.get('/kaka/:lat/:long', (req,res) => {
             message = '<div style="padding:5px;">You!</div>';
             displayMarker(locPosition, message);   
         </script>
-        <script> function helloJams() { console.log("Hello"); jams.postMessage("Hello"); } </script>
+        <script> function helloJams() { console.log("Hello"); james.postMessage("Hello"); } </script>
         <div style=" position: relative; height: 200px; text-align: center; background-color:#ccc; ">
             <div style=" margin: 0; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); ">
                 <p>HTML Page</p><button onclick="helloJams()">BUTTON</button>
