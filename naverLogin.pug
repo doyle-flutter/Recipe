@@ -1,0 +1,34 @@
+// ../views/naverloingauth.pug
+
+<!DOCTYPE html>
+html(lang="ko")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title NAVER Login !
+        style.
+            .title {
+                width:100%; 
+                text-align:center; 
+                margin-top:50px;
+            }
+            .title >.myBtn {
+                font-size:3rem;
+            }
+    body
+
+        div.title
+            button.myBtn(type='button' onclick='helloJames()') 완료
+
+        script.
+            var key = "#{key}"
+            function helloJames() { 
+                console.log("Hello") 
+                try{
+                    james.postMessage(key)
+                }
+                catch(e){
+                    return
+                }
+            }
