@@ -1,4 +1,4 @@
-// flutter_sound (with permission_handler)
+// flutter_sound 5.0.1 (with permission_handler)
 // https://pub.dev/packages/flutter_sound
 
 // * And minSDK : 24+
