@@ -3,8 +3,8 @@ const fs = require('fs');
 const https = require('https');
 const path = require('path');
 
-var key = fs.readFileSync(path.join(__dirname,'/server.key'));
-var cert = fs.readFileSync(path.join(__dirname, '/server.cert'));
+const key = fs.readFileSync(path.join(__dirname,'/server.key'));
+const cert = fs.readFileSync(path.join(__dirname, '/server.cert'));
 
 const express = require('express');
 const app = express();
