@@ -1,3 +1,8 @@
+// file_picker: ^1.9.0+1
+// https://pub.dev/packages/file_picker
+// *setUp : https://github.com/miguelpruivo/flutter_file_picker/wiki/Setup
+// *해당 버전에서 android_Intent 패키지와 충돌 이슈 -> Intent 기능 구현시 네이티브로 직접 구현
+
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +19,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Recorde APP'),
+      home: MyHomePage(title: 'Flutter File APP'),
     );
   }
 }
