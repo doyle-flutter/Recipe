@@ -22,7 +22,7 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     Future.microtask(() async{
       OneSignal.shared.init(
-          "59ac71cc-fc3b-4125-a8fe-abbc51cf1409",
+          "YOUR_KEY",
           iOSSettings: {
             OSiOSSettings.autoPrompt: false,
             OSiOSSettings.inAppLaunchUrl: false
