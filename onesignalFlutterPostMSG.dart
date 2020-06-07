@@ -1,5 +1,5 @@
 // OneSignal
-// 기기 간 서로 ID를 알고 있을 경우 직접 서버를 만들지 않고도 PushMSG를 발송할 수 있음
+// 기기 간 서로 ID를 알고 있을 경우 직접 서버를 구축하지 않고도 PushMSG를 발송할 수 있음
 // OneSignal Ref 및 Rest API 참고 : https://documentation.onesignal.com/docs/sdk-reference
 // IOS 테스트 완료(에뮬레이터 -> SE2)
 
