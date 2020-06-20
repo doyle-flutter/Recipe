@@ -1,7 +1,14 @@
-// 패키지
+// * 패키지
 //  socket_io_client:
 //  http:
 
+// * android permission :
+//     <uses-permission android:name="android.permission.INTERNET" />
+//     <application .... 
+//         android:usesCleartextTraffic="true">
+
+// * ios permission : X
+// 단, 시뮬레이터에서는 전화기능이 동작하지 않으므로 직접 기기를 통해 테스트 해주세요
 
 import 'package:flutter/material.dart';
 import 'dart:convert';
