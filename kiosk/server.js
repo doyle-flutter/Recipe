@@ -20,8 +20,8 @@ app.use(express.urlencoded({extended:true}));
 
 http.listen(3000, () => {});
 
-app.get('/', (req, res) => res.sendFile("C:/Users/User/Desktop/kiosk/main.html"));
-app.get('/admin', (req, res) =>  res.sendFile("C:/Users/User/Desktop/kiosk/webadmin.html"));
+app.get('/', (req, res) => res.sendFile("CL/PATH.../main.html"));
+app.get('/admin', (req, res) =>  res.sendFile("C:/PATH.../webadmin.html"));
 app.get('/imgs', (req,res) => {
     /*/
     use kiosk;
