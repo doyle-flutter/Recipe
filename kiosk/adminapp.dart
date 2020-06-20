@@ -1,3 +1,8 @@
+// 패키지
+//  socket_io_client:
+//  http:
+
+
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'dart:io';
