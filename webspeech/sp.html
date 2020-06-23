@@ -1,0 +1,53 @@
+// 음성 인식 참고 자료 : https://github.com/mdn/web-speech-api/?fbclid=IwAR0Z2o0pJo7yWjHXshTkOq9GsOAN79RwTxsKqzVlhTDApLD6S7lJ2POoYkw
+// 개발자 모드의 콘솔창을 확인해주세요
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WEB Speech</title>
+</head>
+<body>
+    <button onclick="play()">GO</button>
+    
+    <script>
+        var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
+
+        var target = [ '안녕', '하세요', '제임쓰', '제임스', '재임쓰', '재임쓰'];
+
+        var recognition = new SpeechRecognition();
+        recognition.continuous = false;
+        recognition.lang = 'ko-KO';
+        recognition.interimResults = false;
+        recognition.maxAlternatives = 1;
+
+        var play = () => recognition.start()
+
+        recognition.onresult = (event) => {
+            var transcript =  event.results[0][0].transcript
+            var persent = Math.floor(event.results[0][0].confidence*100)
+            console.log(`들은 발음 : ${transcript} / 발음 인식 정확도 : ${persent}%`)
+            for(var i = 0; i<target.length; i++){
+                if(target[i] === transcript) return console.log("정답!")
+                if(i === target.length-1) return recognition.onnomatch()
+            }
+        }
+
+        recognition.onspeechend = function() {
+            console.log("들음")
+            recognition.stop()
+        }
+
+        recognition.onnomatch = function(event) {
+            console.log("하나도 안맞아")
+        }
+
+        recognition.onerror = function(event) {
+            console.log("오류 발생 ! 오류 발생 !!")
+        }
+
+    </script>
+</body>
+</html>
