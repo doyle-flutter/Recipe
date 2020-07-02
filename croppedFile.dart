@@ -1,4 +1,6 @@
 // https://pub.dev/packages/image_cropper
+
+File croppedFile;
                   
 croppedFile == null
 ? Container()
