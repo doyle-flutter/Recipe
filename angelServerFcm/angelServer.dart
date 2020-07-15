@@ -16,7 +16,7 @@ main() async {
 
     app
       ..get('/', (req, res) => res.write('Hello, world!(Dart Server : Angle) \n - James Flutter -'))
-      ..get('/data', (req,res) => "제임스 Flutter")
+      ..get('/data', (req,res) => "제임쓰 Flutter")
       ..get('/datas', (req,res) => [ 1, 2, 3, 4, { "key" : "value" } ])
       ..get('/path/:id', (req,res) => { 'pathId' : req.params['id'] })
       // ..get('/int/int:id', (req,res) => { 'int' : req.params['id'] })
