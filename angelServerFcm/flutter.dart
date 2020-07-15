@@ -7,7 +7,7 @@ class AngelFcm extends StatefulWidget {
 }
 
 class _AngelFcmState extends State<AngelFcm> {
-  static const String _URL = "http://127.0.01:3000";
+  static const String _URL = "http://127.0.0.1:3000";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
