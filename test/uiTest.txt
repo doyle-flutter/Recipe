@@ -1,0 +1,7 @@
+// * 정적 구성
+// * 데이터(더미 또는 서버연결)를 활용하여 동적 구성
+
+- https://cdn.dribbble.com/users/795258/screenshots/4789993/post_2_copy.png
+- https://cdn.dribbble.com/users/992966/screenshots/6206626/for-dribbble.png
+- https://i.pinimg.com/originals/74/bb/33/74bb335df0425f269feb9d7ebccc2e5c.png
+- https://i.pinimg.com/originals/b3/d1/4d/b3d14d4f444d99e8e8431fe43e404059.png
