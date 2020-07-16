@@ -1,0 +1,49 @@
+// 1.
+
+{
+ "key":[1,2,3,4] 
+}
+
+
+// 2.
+[
+  {"key":"value1"},
+  {"key":"value2"},
+  {"key":"value3"},
+]
+
+// 3.
+[
+  {
+    "title":"title1",
+    "img":"src",
+    "datas":[ 1,2,3 ]
+  },
+  {
+    "title":"title2",
+    "img":"src",
+    "datas":[ 4,5,6 ]
+  },
+]
+
+// 4.
+[
+  {
+    "title":"title1",
+    "img":"src",
+    "datas":[
+      {"title":"subTitle1", "des":"des1"},
+      {"title":"subTitle2", "des":"des2"},
+      {"title":"subTitle3", "des":"des3"},
+    ]
+  },
+  {
+    "title":"title2",
+    "img":"src",
+    "datas":[
+      {"title":"subTitle1", "des":"des1"},
+      {"title":"subTitle2", "des":"des2"},
+      {"title":"subTitle3", "des":"des3"},
+    ]
+  },
+]
