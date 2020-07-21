@@ -1,0 +1,9 @@
+<block name="content">
+   <!-- {'title': '제임쓰 Flutter', 'datas':["/","/data","/datas"] } -->
+   <p>{{ title }}</p>
+   <ul>
+      <li for-each=datas as="e">
+         <a href=e> {{ datas.indexOf(e)+1 }} 번 : {{e}}</a>
+      </li>
+   </ul> 
+</block>
