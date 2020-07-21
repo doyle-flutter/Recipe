@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <title>{{ title ?? 'Hi' }}</title>
+    <style>
+        *{ padding:0; margin:0; }
+        body{ padding: 40px 0 0 40px; }
+        ul{ padding-left: 40px; }
+    </style>
+</head>
+<body>
+    <img src="https://angel-dart.dev/assets/images/logo.png"/>
+    <h1>WEB SSR & SPA</h1>
+    <h3>( Template : Jael )</h3>
+    <include src="contents.jael" />
+</body>
+</html>
