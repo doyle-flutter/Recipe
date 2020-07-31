@@ -10,10 +10,9 @@ app.post('/login', (req,res) => {
     var id = req.body['id'];
     var pw = req.body['pw'];
     if(id === undefined || pw === undefined) return res.json(false);
-    if(id !== "qwe" && pw !== "123") return res.json(false); // id & token Check + Validation Logic
+    if(id !== "qwe" || pw !== "123") return res.json(false); // id & token Check + Validation Logic
     if(headerToken === undefined) return res.json(false);
     if(headerToken !== "1") return res.json(false); // DB Token Check Logic
-    console.log(true);
     return res.json(true);
 });
 
