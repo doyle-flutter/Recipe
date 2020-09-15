@@ -1,0 +1,92 @@
+// 사용 패키지 : flutter_cached_pdfview
+// URL : https://pub.dev/packages/flutter_cached_pdfview
+
+// main.dart
+void main() => runApp(
+  MultiProvider(
+    providers: [
+      ChangeNotifierProvider<PdfUrlProvider>(create: (_) => new PdfUrlProvider(),),
+      ChangeNotifierProvider<LoginCheckProvider>(create: (_) => new LoginCheckProvider(),)
+    ],
+    child: MaterialApp(
+      debugShowCheckedModeBanner: false,
+      debugShowMaterialGrid: false,
+      showSemanticsDebugger: false,
+      home: new PdfView()
+    ),
+  )
+);
+
+  
+// PdfView.dart
+import 'package:flutter/material.dart';
+import 'package:flutter_cached_pdfview/flutter_cached_pdfview.dart';
+import 'package:provider/provider.dart';
+
+// Provider_ver
+class PdfView extends StatefulWidget {
+  @override
+  _PdfViewState createState() => _PdfViewState();
+}
+
+class _PdfViewState extends State<PdfView> {
+  String b = 'http://africau.edu/images/default/sample.pdf';
+
+  String s1 = '사용하시는 PDF를 입력해주세요1';
+
+  String s2 = '사용하시는 PDF를 입력해주세요2';
+
+  @override
+  Widget build(BuildContext context) {
+    PdfUrlProvider p = Provider.of<PdfUrlProvider>(context);
+    return Scaffold(
+      appBar: AppBar(),
+      drawer: Drawer(
+        child: ListView(
+          children: <Widget>[
+            ListTile(
+              onTap: () async{
+                p.url = b;
+                Navigator.of(context).pop();
+                await pd();
+              },
+              title: Text("Sample 0"),
+            ),
+            ListTile(
+              onTap: () async{
+                p.url = s1;
+                Navigator.of(context).pop();
+                await pd();
+              },
+              title: Text("Sample 1"),
+            ),
+            ListTile(
+              onTap: () async{
+                p.url = s2;
+                Navigator.of(context).pop();
+                await pd();
+              },
+              title: Text("Sample 2"),
+            )
+          ],
+        ),
+      ),
+      body: new PDF(swipeHorizontal: true).cachedFromUrl(p.url)
+    );
+  }
+
+  Future<void> pd() async => await Navigator.of(context).pushReplacement(
+    MaterialPageRoute(
+      builder: (context) => new PdfView()
+    )
+  );
+}
+
+class PdfUrlProvider with ChangeNotifier{
+  String _url = 'http://africau.edu/images/default/sample.pdf';
+  String get url => _url;
+  set url(String newUrl){
+    _url = newUrl;
+    notifyListeners();
+  }
+}
