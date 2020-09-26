@@ -1,3 +1,5 @@
+// Doc : https://firebase.google.com/docs/reference/rest/auth#section-create-email-password
+
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
