@@ -1,3 +1,5 @@
+// Doc : https://firebase.google.com/docs/reference/rest/auth#section-create-email-password
+
 app.get('/firebase', async (req, res) => {
   await axios(
     {
