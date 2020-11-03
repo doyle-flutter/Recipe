@@ -2,6 +2,12 @@
 // https://pub.dev/packages/audio 
 // 예시 소리파일은 패키지에서 제공한 파일을 재생하므로, 
 // 정상적으로 재생되지 않을 수 있습니다
+
+// *
+// 20년 11월 3일(화)
+// 고정 댓글을 통해 변경사항을 확인해주세요 ~
+// 영상 URL : https://youtu.be/jgZvLRri5Mg
+
 class AudioPage extends StatefulWidget {
   @override
   _AudioPageState createState() => _AudioPageState();
