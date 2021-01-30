@@ -1,5 +1,6 @@
 // With Airtable
 // - pub : (1) http (2) provider
+// * WEB Build : flutter run -d chrome --release
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -82,7 +83,10 @@ class MyApp extends StatelessWidget {
               child: Column(
                 children: [
                   Container(
-                    child: Text("Search"),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [Text("검색"), Icon(Icons.search)],
+                    ),
                   ),
                   Container(
                     child: TextField(
@@ -96,6 +100,8 @@ class MyApp extends StatelessWidget {
             )
           : (_data.personData.length == 1 && _data.personData[0] == 'error')
               ? Container(
+                  width: MediaQuery.of(context).size.width,
+                  alignment: Alignment.center,
                   child: Column(
                     children: [
                       Container(
