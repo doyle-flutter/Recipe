@@ -5,7 +5,11 @@ import './store.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   GestureBinding.instance.resamplingEnabled = true;
-  return runApp(MaterialApp(home: SingletonEx(),));
+  return runApp(
+    MaterialApp(
+      home: SingletonEx(),
+    )
+  );
 }
 
 class SingletonEx extends StatefulWidget {
@@ -18,9 +22,10 @@ class _SingletonExState extends State<SingletonEx> {
   @override
   void initState() {
     Future.microtask(() async {
-      this.store = await Future.delayed(Duration(seconds: 5), () async {
-        return await Store.getInstance();
-      });
+      this.store = await Future<Store>.delayed(
+        Duration(seconds: 5), 
+        () async => await Store.getInstance()
+      );
       print("this.store.data : ${this.store.data}");
       this.store.data = {'my': 'data'};
       print("this.store.data : ${this.store.data}");
