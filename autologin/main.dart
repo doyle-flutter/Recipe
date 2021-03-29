@@ -1,3 +1,4 @@
+// Flutter 2.0 NullSafety 적용 : https://gist.github.com/doyle-flutter/6182c5aa8bb24808bb4d27a8013a16af
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
